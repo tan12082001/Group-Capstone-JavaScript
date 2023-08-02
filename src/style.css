@@ -55,9 +55,68 @@ header {
   flex-direction: column;
   text-align: center;
   gap: var(--flex-gap);
+  background: linear-gradient(90deg, rgba(168, 184, 76, 0.608), rgba(78, 164, 145, 0.542));
+  min-height: 300px;
+  justify-content: center;
+}
+
+header p span {
+  color: rgb(104, 37, 191);
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 100%;
+  margin: 5px auto;
+  background-color: aquamarine;
+}
+
+.container {
+  background-color: rgb(209, 209, 209);
+  transition: all ease 0.95s;
+}
+
+.container:hover {
+  transform: scale(1.1);
+}
+
+.container img {
+  width: 100%;
+}
+
+.mealInfo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mealInfo button {
+  padding: 10px 26px;
+  background-color: rgb(121, 193, 121);
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.newdiv {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
 }
 
 footer {
   padding: 10px var(--outer-left-right-padding);
   border-top: 1px solid #000;
+  background: linear-gradient(90deg, rgba(67, 67, 238, 0.608), rgba(228, 75, 75, 0.542), rgb(117, 8, 249));
+}
+
+.copyright p {
+  text-align: center;
 }
