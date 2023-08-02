@@ -11,8 +11,8 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   font-family: var(--main-font-family);
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@ button.close-popup {
 .inner-popups {
   width: 86vw;
   height: 86vh;
-  background-color: #fff;
+  background-color: rgb(224, 240, 235);
   overflow-y: auto;
   border-radius: 7px;
 }
@@ -118,12 +118,8 @@ button.close-popup {
 }
 
 .popup-img {
-  width: 100%;
+  width: 96%;
   height: auto;
-}
-
-.for-background {
-  background-color: rgba(127, 255, 212, 0.6);
 }
 
 li.recipe-tags,
@@ -132,6 +128,23 @@ li.recipe-catogery {
   display: flex;
   align-items: center;
   gap: 20px;
+  line-height: 1.6em;
+}
+
+li.recipe-ingredients,
+li.recipe-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.6em;
+}
+
+tr.table-row {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 ul.recipe-info {
@@ -142,12 +155,88 @@ ul.recipe-info {
   padding: 4%;
 }
 
+.comments-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 4%;
+  padding: 4%;
+  background: #d3d3d3;
+}
+
+.head-comments,
+form.add-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form.add-comment {
+  align-items: center;
+}
+
+.comment-display,
+li.each-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment-display {
+  height: 200px;
+  overflow-y: auto;
+}
+
+li.each-comment {
+  border-bottom: 1px solid black;
+}
+
+.user-name {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.person {
+  font-size: 22px;
+  color: rgb(60, 63, 64);
+}
+
+.creation-date {
+  color: rgba(105, 99, 99, 0.5);
+}
+
+.input {
+  width: 60%;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 4px;
+}
+
+.comment-date {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(242, 242, 233);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.recipe-popup {
+  padding: 12px;
+  background-color: aquamarine;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
 #content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 100%;
   margin: 5px auto;
+  padding: var(--outer-left-right-padding);
 }
 
 .container {
