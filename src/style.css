@@ -68,12 +68,18 @@ main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 90%;
-  margin: 10px auto;
+  max-width: 100%;
+  margin: 5px auto;
+  background-color: aquamarine;
 }
 
 .container {
   background-color: rgb(209, 209, 209);
+  transition: all ease 0.95s;
+}
+
+.container:hover {
+  transform: scale(1.1);
 }
 
 .container img {
@@ -94,6 +100,15 @@ main {
   border: none;
   border-radius: 5px;
   margin: 5px;
+}
+
+.newdiv {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
 }
 
 footer {
