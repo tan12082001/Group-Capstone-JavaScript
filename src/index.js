@@ -1,5 +1,5 @@
 import './style.css';
-import getDish from './modules/getDishes';
+import getDish from './modules/getDishes.js';
 import logoimg from './media/FoodHoodieslogo.png';
 
 const LOGO = document.querySelector('.logo');
@@ -12,5 +12,5 @@ getDish();
 const pops = document.querySelector('.popups');
 const clo = document.querySelector('.close-popup');
 clo.addEventListener('click', () => {
-    pops.classList.toggle('no');
+  pops.classList.toggle('no');
 });

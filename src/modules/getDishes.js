@@ -1,4 +1,4 @@
-import displayPopup from "./display-popup.js";
+import displayPopup from './display-popup.js';
 
 const getDish = async () => {
   const dishCounts = document.getElementById('mealCounts');
@@ -86,13 +86,13 @@ const getDish = async () => {
       dishSection.appendChild(data);
     });
 
+    // click event listener for comment popup
     const btns = document.querySelectorAll('.recipe-popup');
     btns.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            displayPopup(e.target.id);
-            console.log('popup');
-        })
-    })
+      btn.addEventListener('click', (e) => {
+        displayPopup(e.target.id);
+      });
+    });
   };
 
   getLikes().then(() => {

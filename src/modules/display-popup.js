@@ -1,33 +1,33 @@
 const displayPopup = async (id) => {
-    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
-    const data = await response.json();
-    const content = data.meals[0];
-    const popupcontainer = document.querySelector('.popup-container');
-    const pops = document.querySelector('.popups');
-    pops.classList.toggle('no');
-    const ingredientsArray = [];
-    const measuresArray = [];
-    for (let i = 1; i <= 20; i++) {
-        const ingredient = content[`strIngredient${i}`];
-        const measure = content[`strMeasure${i}`];
-        if (ingredient && measure) {
-            ingredientsArray.push(ingredient);
-            measuresArray.push(measure);
-        } else {
-            break;
-        }
+  const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+  const data = await response.json();
+  const content = data.meals[0];
+  const popupcontainer = document.querySelector('.popup-container');
+  const pops = document.querySelector('.popups');
+  pops.classList.toggle('no');
+  const ingredientsArray = [];
+  const measuresArray = [];
+  for (let i = 1; i <= 20; i += 1) {
+    const ingredient = content[`strIngredient${i}`];
+    const measure = content[`strMeasure${i}`];
+    if (ingredient && measure) {
+      ingredientsArray.push(ingredient);
+      measuresArray.push(measure);
+    } else {
+      break;
     }
-    let tableHTML = '<table>';
-    for (let i = 0; i < ingredientsArray.length; i++) {
-        tableHTML += `
+  }
+  let tableHTML = '<table>';
+  for (let i = 0; i < ingredientsArray.length; i += 1) {
+    tableHTML += `
           <tr class='table-row'>
             <td class='table-col'>${ingredientsArray[i]}</td>
             <td class='table-col'>${measuresArray[i]}</td>
           </tr>
         `;
-    }
-    tableHTML += '</table>';
-    popupcontainer.innerHTML = `
+  }
+  tableHTML += '</table>';
+  popupcontainer.innerHTML = `
       <h2 class='popup-title'>${content.strMeal}</h2>
       <img class='popup-img' src='${content.strMealThumb}'>
       <div class='for-background'>
@@ -56,6 +56,5 @@ const displayPopup = async (id) => {
         </div>
       </div>
     `;
-    
-}
+};
 export default displayPopup;
