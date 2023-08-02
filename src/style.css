@@ -1,3 +1,7 @@
 body {
   background-color: aqua;
 }
+
+footer {
+  background: linear-gradient(90deg, rgba(67, 67, 238, 0.608), rgba(228, 75, 75, 0.542));
+}
