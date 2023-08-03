@@ -1,12 +1,6 @@
-import { getComments } from './comments-interaction.js';
+const countComments = () => {
+  let comments = document.querySelectorAll('.each-comment');
+  return comments.length;
+}
 
-const countCommnets = async (id) => {
-  const temp = await getComments(id);
-  if (temp.length > 0) {
-    return temp.length;
-  }
-
-  return 0;
-};
-
-export default countCommnets;
+export default countComments;

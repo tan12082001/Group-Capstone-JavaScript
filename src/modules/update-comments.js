@@ -1,4 +1,5 @@
 import { getComments } from './comments-interaction.js';
+import countComments from './comments-counter.js';
 
 const updateComments = async (id, commentsdisplay) => {
   const comments = await getComments(id);
@@ -18,6 +19,9 @@ const updateComments = async (id, commentsdisplay) => {
   } else {
     commentsdisplay.innerHTML = 'No comments yet!';
   }
+  const cc = document.querySelector('.comments-count');
+  const updatedCommentCount = countComments();
+  cc.textContent = updatedCommentCount;
 };
 
 export default updateComments;

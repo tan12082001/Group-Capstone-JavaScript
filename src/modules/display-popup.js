@@ -1,6 +1,6 @@
 import { addComment } from './comments-interaction.js';
 import updateComments from './update-comments.js';
-import countCommnets from './comments-counter.js';
+import countComments from './comments-counter.js';
 
 const displayPopup = async (id) => {
   const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
@@ -72,8 +72,6 @@ const displayPopup = async (id) => {
       if (username.value !== '' && usercomment.value !== '') {
         await addComment(e.target.id, username.value, usercomment.value);
         updateComments(e.target.id, commentsdisplay);
-        const count = await countCommnets(e.target.id);
-        cc.textContent = count;
         username.value = '';
         usercomment.value = '';
       }
@@ -82,7 +80,7 @@ const displayPopup = async (id) => {
 
   // Update comments display for the initial popup
   await updateComments(id, commentsdisplay);
-  const initialCount = await countCommnets(id);
+  const initialCount = countComments();
   cc.textContent = initialCount;
   return content;
 };
