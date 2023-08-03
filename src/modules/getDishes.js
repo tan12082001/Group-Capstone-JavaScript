@@ -1,3 +1,5 @@
+import displayPopup from './display-popup.js';
+
 const getDish = async () => {
   const dishCounts = document.getElementById('mealCounts');
   const dishSection = document.getElementById('content');
@@ -71,6 +73,9 @@ const getDish = async () => {
       div.appendChild(p2);
 
       const button = document.createElement('button');
+      button.className = 'recipe-popup';
+      button.setAttribute('type', 'button');
+      button.setAttribute('id', element.idMeal);
       button.textContent = 'comment';
       datainfo.appendChild(button);
 
@@ -79,6 +84,14 @@ const getDish = async () => {
       });
 
       dishSection.appendChild(data);
+    });
+
+    // click event listener for comment popup
+    const btns = document.querySelectorAll('.recipe-popup');
+    btns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        displayPopup(e.target.id);
+      });
     });
   };
 
