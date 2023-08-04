@@ -79,7 +79,7 @@
 
 ## Walkthrough <a name="walkthrough"></a>
 
-- [Loom Video]()
+-  [Walkthrough Video](https://drive.google.com/file/d/1RFTgX_O8HbsUFnqMQLkJLoF5JYTALp0X/view?usp=drive_link)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
