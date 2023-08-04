@@ -1,0 +1,283 @@
+:root {
+  --main-font-family: 'Inter', sans-serif;
+  --outer-left-right-padding: 40px;
+  --flex-gap: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: var(--main-font-family);
+  display: flex;
+  flex-direction: column;
+  gap: var(--flex-gap);
+  justify-content: space-between;
+}
+
+nav,
+header {
+  padding: 0 var(--outer-left-right-padding);
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: var(--flex-gap);
+  background: linear-gradient(90deg, rgba(168, 184, 76, 0.608), rgba(78, 164, 145, 0.542));
+  min-height: 300px;
+  justify-content: center;
+}
+
+header p span {
+  color: rgb(104, 37, 191);
+}
+
+main {
+  max-width: 100%;
+  margin: 5px auto;
+  background-color: rgb(127, 255, 212);
+}
+
+.close-div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+button.close-popup {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 20px;
+}
+
+.popups {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.inner-popups {
+  width: 86vw;
+  height: 86vh;
+  background-color: rgb(224, 240, 235);
+  overflow-y: auto;
+  border-radius: 7px;
+}
+
+.no {
+  display: flex;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+li.recipe-tags,
+li.recipe-area,
+li.recipe-catogery {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  line-height: 1.6em;
+}
+
+li.recipe-ingredients,
+li.recipe-instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.6em;
+}
+
+tr.table-row {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+ul.recipe-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding: 4%;
+}
+
+.comments-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 4%;
+  padding: 4%;
+  background: #d3d3d3;
+}
+
+.head-comments,
+form.add-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form.add-comment {
+  align-items: center;
+}
+
+.comment-display,
+li.each-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment-display {
+  height: 200px;
+  overflow-y: auto;
+}
+
+li.each-comment {
+  border-bottom: 1px solid black;
+}
+
+.user-name {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.person {
+  font-size: 22px;
+  color: rgb(60, 63, 64);
+}
+
+.creation-date {
+  color: rgba(105, 99, 99, 0.5);
+}
+
+.input {
+  width: 60%;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 4px;
+}
+
+.comment-date {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(242, 242, 233);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.recipe-popup {
+  padding: 12px;
+  background-color: aquamarine;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 100%;
+  margin: 5px auto;
+  padding: var(--outer-left-right-padding);
+}
+
+.container {
+  background-color: rgb(209, 209, 209);
+  transition: all ease 0.95s;
+}
+
+.container:hover {
+  transform: scale(1.1);
+}
+
+.container img {
+  width: 100%;
+}
+
+.mealInfo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mealInfo button {
+  padding: 10px 26px;
+  background-color: rgb(121, 193, 121);
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.newdiv {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+footer {
+  padding: 10px var(--outer-left-right-padding);
+  border-top: 1px solid #000;
+  background: linear-gradient(90deg, rgba(67, 67, 238, 0.608), rgba(228, 75, 75, 0.542), rgb(117, 8, 249));
+}
+
+.copyright p {
+  text-align: center;
+}
