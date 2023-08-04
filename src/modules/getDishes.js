@@ -7,8 +7,6 @@ const getDish = async () => {
   const display = await feedback.json();
   const appId = 'yVAEqw33gzsdx8sGwaR1';
   let likeData;
-  const counter = document.querySelector('.counter');
-  counter.textContent = countDishes();
 
   const getLikes = async () => {
     await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`)
@@ -86,7 +84,8 @@ const getDish = async () => {
 
       dishSection.appendChild(data);
     });
-
+    const counter = document.querySelector('.counter');
+    counter.textContent = countDishes();
     // click event listener for comment popup
     const btns = document.querySelectorAll('.recipe-popup');
     btns.forEach((btn) => {
