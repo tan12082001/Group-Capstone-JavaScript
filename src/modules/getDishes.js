@@ -1,13 +1,14 @@
 import displayPopup from './display-popup.js';
+import countDishes from './dishCounts.js';
 
 const getDish = async () => {
-  const dishCounts = document.getElementById('mealCounts');
   const dishSection = document.getElementById('content');
   const feedback = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=British');
   const display = await feedback.json();
-  dishCounts.innerHTML += ` (${display.meals.length})`;
   const appId = 'yVAEqw33gzsdx8sGwaR1';
   let likeData;
+  const counter = document.querySelector('.counter');
+  counter.textContent = countDishes();
 
   const getLikes = async () => {
     await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`)
